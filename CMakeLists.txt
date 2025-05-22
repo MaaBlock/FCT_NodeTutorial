@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(FCT_NodeJS_Integration)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_subdirectory(FCT_Node)
+
+add_executable(FCT_NodeJS_Integration main.cpp)
+
+target_link_libraries(FCT_NodeJS_Integration PUBLIC FCT_Node)
+
+if(DEFINED NODE_LIB_DIR)
+    add_custom_command(TARGET FCT_NodeJS_Integration POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${NODE_LIB_DIR}/libnode.dll"
+            $<TARGET_FILE_DIR:FCT_NodeJS_Integration>)
+endif()

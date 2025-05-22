@@ -1,0 +1,8 @@
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/CMakeFiles/FCT_NodeJS_Integration.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/FCT_Node/CMakeFiles/FCT_Node.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/FCT_Node/CMakeFiles/edit_cache.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/FCT_Node/CMakeFiles/rebuild_cache.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/FCT_Node/node/CMakeFiles/edit_cache.dir
+G:/Users/Administrator/CLionProjects/untitled/cmake-build-debug/FCT_Node/node/CMakeFiles/rebuild_cache.dir
