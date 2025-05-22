@@ -8,8 +8,6 @@
 using namespace v8;
 using namespace node;
 
-
-
 int RunNodeInstance(MultiIsolatePlatform* platform,
                     const std::vector<std::string>& args,
                     const std::vector<std::string>& exec_args) {
@@ -223,6 +221,7 @@ void Init()
 }
 using namespace FCT;
 int main() {
+    fout << "please install must libary by using npm"
     Init();
     NodeEnvironment env;
     env.addModulePath("./node_modules");
