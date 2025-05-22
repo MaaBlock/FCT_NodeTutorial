@@ -1,6 +1,0 @@
-# ninja log v6
-1041	1250	7695914555622789	FCT_NodeJS_Integration.exe	d3d577213d8395e7
-4	1041	7695914545259417	CMakeFiles/FCT_NodeJS_Integration.dir/main.cpp.obj	88bb89b57c758bd
-3	71	7696121290654998	build.ninja	2b6518af5fba0a4e
-2	29	7695814388932207	FCT_Node/CMakeFiles/FCT_Node.dir/headers.cpp.obj	336eba27887cd0b
-30	49	7695814389207575	FCT_Node/FCT_Node.lib	7d1c856b44a8479d

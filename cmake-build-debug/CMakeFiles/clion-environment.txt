@@ -1,5 +1,0 @@
-ToolSet: 17.0 (local)@E:\Program Files\Microsoft Visual Studio\2022\Enterprise
-Ninja: 1.12.1@F:\Program Files\JetBrains\CLion 2024.3.3\bin\ninja\win\x64\ninja.exe
-Options: 
-
-Options:-DCMAKE_MAKE_PROGRAM=F:/Program Files/JetBrains/CLion 2024.3.3/bin/ninja/win/x64/ninja.exe
