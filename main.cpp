@@ -22,7 +22,6 @@ using namespace FCT;
 using namespace std;
 int main() {
     cout << "please install must libary by using npm" << endl;
-    Init();
     NodeEnvironment env;
     env.addModulePath("./node_modules");
     std::vector<std::string> args = {
