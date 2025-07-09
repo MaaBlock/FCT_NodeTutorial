@@ -15,9 +15,18 @@ const OpenAI = require("openai");
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+const apiKey = process.env.DEEPSEEK_API_KEY;
+
+if (!apiKey) {
+    console.log(process.env);
+    console.error("错误：未找到环境变量 DEEPSEEK_API_KEY");
+    console.error("请设置环境变量：set DEEPSEEK_API_KEY=your_api_key");
+}
+
+
 const openai = new OpenAI({
         baseURL: 'https://api.deepseek.com',
-        apiKey: 'sk-e60d8f372263449c80779a3f28d4470e'
+        apiKey: apiKey
 });
 
 
