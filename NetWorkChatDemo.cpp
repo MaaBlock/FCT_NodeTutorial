@@ -217,7 +217,7 @@ function getUsername() {
     wcout << L"聊天客户端已启动" << endl;
     wcout << L"请输入服务器地址 (例如: http://localhost:3000): ";
     string serverUrl;
-    cin >> serverUrl;
+    cin >> serverUrl;//输入服务器地址
 
     wcout << L"请输入您的用户名: ";
     string username;
@@ -236,7 +236,7 @@ function getUsername() {
 
     wcout << L"正在连接到服务器..." << endl;
     auto promise = env.callFunction<JSPromise>("connect", serverUrl, username);
-
+//
     while (!promise.isSettled()) {
         env.tick();
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
@@ -262,7 +262,7 @@ function getUsername() {
             }
             while (!inputs.empty())
             {
-                string command = GetInput();
+                string command = GetInput();//获取输入
                 if (command == "exit") {
                     wcout << L"断开连接并退出..." << endl;
                     env.callFunction<bool>("disconnect");

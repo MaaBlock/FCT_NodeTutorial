@@ -17,7 +17,7 @@ const cheerio = require('cheerio');
 
 const openai = new OpenAI({
         baseURL: 'https://api.deepseek.com',
-        apiKey: ''
+        apiKey: 'sk-e60d8f372263449c80779a3f28d4470e'
 });
 
 
@@ -27,7 +27,7 @@ async function askAi(system, question) {
             const completion = await openai.chat.completions.create({
                 messages: [
                   { role: "system", content: system },
-                  { role: "user", content: question }
+                  { role: "user", content: question },
                 ],
                 model: "deepseek-chat",
             });
@@ -90,7 +90,13 @@ async function searchBaidu(keyword) {
         } else if (command == "ask")
         {
             string question;
+            string teacher;
+            string answer;
+
+            char ch;
+            question = "";
             cin >> question;
+
             auto promise = env.callFunction<JSPromise>("askAi",
               system,
               question
@@ -156,6 +162,7 @@ async function searchBaidu(keyword) {
         else if (command == "help")
         {
             wcout << L"ask [问题]: 向AI提问" << endl;
+            wcout << L"baidu [问题]: 使用百度搜索问题" << endl;
             wcout << L"help: 帮助" << endl;
             wcout << L"exit: 退出" << endl;
         }
