@@ -9,6 +9,7 @@ int main()
     NodeCommon::Init();
     NodeEnvironment env;
     env.addModulePath("./node_modules");
+    env.addModulePath("F:/FCT_NodeTest/loadModules/node_modules");
     wcout.imbue(locale(".UTF-8"));
     env.code(R"(
 const OpenAI = require("openai");
@@ -31,6 +32,7 @@ const openai = new OpenAI({
 
 
 async function askAi(system, question) {
+    console.log("Asking AI:", question);
     return new Promise(async (resolve, reject) => {
         try {
             const completion = await openai.chat.completions.create({

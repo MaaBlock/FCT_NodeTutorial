@@ -69,6 +69,10 @@ try {
         }
         cout << "Name: " << name << endl;
     }
+    env.excuteScript(R"(
+    const openai = require('openai');
+    console.log(chalk.red.bold('This text is red and bold!'));
+)");
     env.stop();
     return 0;
 }

@@ -62,3 +62,16 @@ if(DEFINED NODE_LIB_DIR)
             "${NODE_LIB_DIR}/libnode.dll"
             $<TARGET_FILE_DIR:Server>)
 endif()
+
+
+
+add_executable(CusstomModulePath CusstomModulePath.cpp)
+
+target_link_libraries(CusstomModulePath PUBLIC FCT_Node)
+
+if(DEFINED NODE_LIB_DIR)
+    add_custom_command(TARGET CusstomModulePath POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${NODE_LIB_DIR}/libnode.dll"
+            $<TARGET_FILE_DIR:CusstomModulePath>)
+endif()
