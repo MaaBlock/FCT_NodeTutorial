@@ -63,8 +63,6 @@ if(DEFINED NODE_LIB_DIR)
             $<TARGET_FILE_DIR:Server>)
 endif()
 
-
-
 add_executable(CusstomModulePath CusstomModulePath.cpp)
 
 target_link_libraries(CusstomModulePath PUBLIC FCT_Node)
