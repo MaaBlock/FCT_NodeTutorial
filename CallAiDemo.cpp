@@ -11,7 +11,8 @@ int main()
     env.addModulePath("./node_modules");
     env.addModulePath("F:/FCT_NodeTest/loadModules/node_modules");
     wcout.imbue(locale(".UTF-8"));
-    env.code(R"(
+    env.setup();
+    env.excuteScript(R"(
 const OpenAI = require("openai");
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -82,7 +83,6 @@ async function searchBaidu(keyword) {
 }
 
 )");
-    env.setup();
 
 /*
  *  searchBaidu(字符串) 百度搜索字符串 返回Promise 结果是 前10个百度标题 标题数组(JSArray)
