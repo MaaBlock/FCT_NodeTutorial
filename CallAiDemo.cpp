@@ -32,7 +32,7 @@ const openai = new OpenAI({
 });
 
 
-async function askAi(system, question) {
+async function askAi(system, question,onFinshed) {
     console.log("Asking AI:", question);
     return new Promise(async (resolve, reject) => {
         try {
@@ -43,10 +43,11 @@ async function askAi(system, question) {
                 ],
                 model: "deepseek-chat",
             });
-
+            onFinshed(true, completion.choices[0].message.content);
             resolve(completion.choices[0].message.content);
         } catch (error) {
             console.error("Error asking AI:", error);
+            onFinshed(false, error.message);
             reject("Error: " + error.message);
         }
     });
@@ -110,7 +111,20 @@ async function searchBaidu(keyword) {
 
             auto promise = env.callFunction<JSPromise>("askAi",
               system,
-              question
+              question,
+              [system](bool success, std::string result)
+              {
+                  if (success)
+                  {
+                      wcout << L"AI回答： "  << endl;
+                      cout << result << endl;
+                  }
+                  else
+                  {
+                      wcout << L"发生错误" << endl;
+                      cout << result << endl;
+                  }
+              }
               );
             wcout << L"AI正在回答中，过程可能要20～25s" << endl;
             while (!promise.isSettled())
