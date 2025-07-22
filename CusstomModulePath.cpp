@@ -4,21 +4,6 @@
 #include <FCT_Node.h>
 using namespace FCT;
 using namespace std;
-class Test
-{
-public:
-    void test(NodeEnvironment& env)
-    {
-        env.callFunction("testa",
-            [this]()
-            {
-                std::cout << "Hello, World!" << std::endl;
-            }
-            );
-    }
-private:
-
-};
 int main()
 {
     NodeCommon::Init();
@@ -38,12 +23,7 @@ Module.registerHooks({
 console.log('paths:', Module);
 console.log('Global paths:', Module.globalPaths);
 const uuid = require('uuid')
-func test(testa) {
-    testa()
-}
 )");
-    Test test;
-    test.test(env);
     env.stop();
     return 0;
 }

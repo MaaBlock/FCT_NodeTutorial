@@ -107,7 +107,9 @@ async function searchBaidu(keyword) {
 
             char ch;
             question = "";
-            cin >> question;
+            while (cin.get(ch) && ch != '~') {
+                question += ch;
+            }
 
             auto promise = env.callFunction<JSPromise>("askAi",
               system,
